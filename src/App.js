@@ -71,7 +71,9 @@ function App() {
 
       {/* fragment */}
       <Fragment propFragment="teste"/>
-      <button onClick={getData}>clica porra</button>
+
+      {/* Treinando API e useEffect */}
+      <button onClick={getData}>clica aqui</button>
     </div>
   );
 }
