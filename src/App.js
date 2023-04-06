@@ -1,15 +1,28 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ManageData from './components/ManageData';
 import ListRender from './components/ListRender';
 import ConditionalRender from './components/ConditionalRender';
 import ShowUserName from './components/ShowUserName';
 import CarDetails from './components/CarDetails';
 import Fragment from './components/Fragment';
+import axios from 'axios';
+
 
 import City from './assets/city.jpg';
 
 function App() {
+  
+  const getData = async () => {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    console.log(response.data)
+  }
+    
+  useEffect(() => {
+    getData()
+  }, [])
+  
+  
   // const name = 'Pedro';
   const [userName] = useState('Renata');
 
@@ -58,6 +71,7 @@ function App() {
 
       {/* fragment */}
       <Fragment propFragment="teste"/>
+      <button onClick={getData}>clica porra</button>
     </div>
   );
 }

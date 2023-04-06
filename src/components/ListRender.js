@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const ListRender = () => {
   const [list] = useState(["Thiago", "Renata", "Mateus", "Artur"])
